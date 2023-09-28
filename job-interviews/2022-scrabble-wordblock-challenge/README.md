@@ -51,13 +51,8 @@ The goals of this test are to evaluate the applicant's ability to:
 * The author should explain alternative approaches considered and justify why their proposed solution is the best option given the constraints and requirements.
 * The explanation should discuss alternative approaches and provide any additional notes or comments that the author feels would be helpful in evaluating their solution.
 
-## Instructions for Submission
-
-* Perform your work on a branch. Once you have finished, merge to the `main` branch with the commit message "Completed assignment" and inform bacote@aps.org. Make sure to include instructions or notes needed to run the program (if applicable).
-
 ### Bonus Points
 
 * Include examples of the largest blocks you created that contains valid words in the dictionary
 
 Good luck!
-
