@@ -25,3 +25,16 @@ export const printListNode = (listNode: ListNode | null) => {
 
   console.log(string);
 }
+
+export const reverseSwap = (array: unknown[]): unknown[] => {
+  let tmp: unknown = null;
+  const length = array.length;
+
+  for (let first = 0, last = length - 1; first < length / 2; ++first, --last) {
+    tmp = array[first];
+    array[first] = array[last];
+    array[last] = tmp;
+  }
+
+  return array;
+};
