@@ -25,6 +25,17 @@ class ListNode {
   }
 }
 
+const reverseSwap = (array: unknown[]) => {
+  let tmp: unknown = null;
+  const length = array.length;
+
+  for (let first = 0, last = length - 1; first < length / 2; ++first, --last) {
+    tmp = array[first];
+    array[first] = array[last];
+    array[last] = tmp;
+  }
+};
+
 function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
   if (!l1) return l2;
   if (!l2) return l1;
@@ -36,12 +47,9 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
     let currentNode: ListNode | null = node;
 
     do {
-      if (node === null) break;
-
-      number = node.val + number;
-      node = node.next;
-
-    } while(currentNode !== null);
+      number = currentNode.val + number;
+      currentNode = currentNode.next;
+    } while (currentNode !== null);
 
     return parseInt(number);
   };
@@ -49,9 +57,7 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
   const l1Number = getListNodeAsNumber(l1);
   const l2Number = getListNodeAsNumber(l2);
   const sum = l1Number + l2Number;
-
-  let sumString = sum.toString();
-  let sumArray = sumString.split('').reverse();
+  const sumArray = sum.toString().split('').reverse();
   let sumListNode: ListNode | null = null;
 
   for (let index = sumArray.length - 1; index >= 0; --index) {
