@@ -5,39 +5,30 @@
 
 function isPalindrome(x: number): boolean {
   const numberString = x.toString();
-  const numberStringLength = numberString.length;
-  const numberStringHalfLength = numberStringLength / 2;
-  let isPalindrome = true;
+  const numberStringHalfLength = numberString.length / 2;
   let indexLeft = 0;
   let indexRight = numberString.length - 1;
 
   while (indexLeft < numberStringHalfLength) {
-    const numberPlaceLeft = numberString[indexLeft++];
-    const numberPlaceRight = numberString[indexRight--];
-
-    if (numberPlaceLeft !== numberPlaceRight) {
-      isPalindrome = false;
-      break;
+    if (numberString[indexLeft++] !== numberString[indexRight--]) {
+      return false;
     }
   }
 
-  return isPalindrome;
-};
-
-function isPalindrome_new(x: number): boolean {
-  const numberString = x.toString();
-  const reversedString = [...numberString].reverse().join('');
-
-  return numberString === reversedString;
+  return true;
 }
 
 const main = () => {
   const tests = [
+    { input: 1, output: true },
+    { input: 10, output: false },
+    { input: 11, output: true },
     { input: 121, output: true },
     { input: -121, output: false },
-    { input: 10, output: false },
     { input: 12321, output: true },
     { input: 1212, output: false },
+    { input: 9007199254740991, output: false },
+    { input: 9007199119917009, output: true },
   ];
 
   for (let testNumber = 0; testNumber < tests.length; ++testNumber) {
