@@ -1,0 +1,13 @@
+{
+  "name": "canoe/q3",
+  "authors": [
+      {
+          "name": "Mike Orozco",
+          "email": "mike.orozco94@gmail.com"
+      }
+  ],
+  "require": {
+      "slim/slim": "4.*",
+      "slim/psr7": "^1.2"
+  }
+}
