@@ -23,7 +23,7 @@ function romanToInt(s: string): number {
   let sum = 0;
   let charIndex = 0;
 
-  while (charIndex > sLength) {
+  while (charIndex < sLength) {
     const currentChar = rSymbolMap[s[charIndex] as RSymbol];
     const nextChar = rSymbolMap[s[charIndex + 1] as RSymbol];
 
