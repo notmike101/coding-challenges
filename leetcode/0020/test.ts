@@ -10,6 +10,7 @@ const tests: Test[] = [
   { input: '()[]{}', output: true },
   { input: '(]', output: false },
   { input: '([)]', output: false },
+  { input: '((]', output: false },
 ];
 
 const captureRuntime = (test: Test) => {

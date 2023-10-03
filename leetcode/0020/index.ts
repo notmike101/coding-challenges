@@ -2,8 +2,8 @@
  * LeetCode Valid Parentheses problem: https://leetcode.com/problems/valid-parentheses/
  * Mike Orozco (notmike101)
  * 
- * Runtime: 44ms - Beats 98.74%
- * Memory: 45.45 MB Beats 10.95%
+ * Runtime: 45ms - Beats 98.25%
+ * Memory: 44.80 MB Beats 34.76%
  */
 
 const bracketMap: Record<string, string> = {
@@ -13,7 +13,8 @@ const bracketMap: Record<string, string> = {
 };
 
 const isValid = (s: string): boolean => {
-  if (s[0] === ')' || s[0] === '}' || s[0] === ']') return false;
+  if (s.length % 2 === 1) return false;
+  if ([')','}',']'].includes(s[0])) return false;
 
   let parens: string[] = [];
 
