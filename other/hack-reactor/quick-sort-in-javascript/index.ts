@@ -45,6 +45,13 @@
  * Now implmement quicksort in JavaScript!
  */
 
+/**
+ * 
+ * @param values - An array of numbers
+ * @param left - An index of one of the items to compare
+ * @param right - An index of one of the items to compare
+ * @returns number - A number of the pivoted item
+ */
 const partition = (values: number[], left: number, right: number) => {
   const pivot = values[right];
   let star = left - 1;
@@ -69,6 +76,12 @@ const partition = (values: number[], left: number, right: number) => {
   return star;
 };
 
+/**
+ * 
+ * @param values - An array of numbers to sort
+ * @param left - The index of an item to sort
+ * @param right - The index of an item to sort
+ */
 export const quickSort = (values: number[], left: number | null = null, right: number | null = null) => {
   if (left === null && right === null) {
     left = 0;
