@@ -1,10 +1,13 @@
 /**
- * LeetCode Roman to Integer problem: https://leetcode.com/problems/roman-to-integer/description/
+ * LeetCode Roman to Integer
+ * https://leetcode.com/problems/roman-to-integer/description/
  * Mike Orozco (notmike101)
  * 
- * Runtime: 113ms   - Beats 58.35% of users with TypeScript
- * Memory:  47.60MB - Beats 83.70% of users with TypeScript
+ * Runtime: 113ms   - Beats 58.35%
+ * Memory:  47.60MB - Beats 83.70%
  */
+
+import captureTestResults, { type ITest } from "../testControl";
 
 type RSymbol = 'I' | 'V' | 'X' | 'L' | 'C' | 'D' | 'M';
 
@@ -18,7 +21,7 @@ const rSymbolMap: Record<RSymbol, number> = {
   M: 1000,
 };
 
-function romanToInt(s: string): number {
+const romanToInt = (s: string): number => {
   const sLength = s.length;
   let sum = 0;
   let charIndex = 0;
@@ -39,4 +42,10 @@ function romanToInt(s: string): number {
   return sum;
 }
 
-export { romanToInt };
+const tests: ITest[] = [
+  { input: 'III', expected: 3, func: romanToInt },
+  { input: 'LVIII', expected: 58, func: romanToInt },
+  { input: 'MCMXCIV', expected: 1994, func: romanToInt },
+];
+
+console.table(captureTestResults(tests));

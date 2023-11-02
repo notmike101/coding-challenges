@@ -3,11 +3,11 @@
  * https://leetcode.com/problems/search-insert-position/description/
  * Mike Orozco (notmike101)
  * 
- * Runtime: 45ms (Beats 95.71%)
- * Memory:  43.62MB (Beats 94.05%)
+ * Runtime: 45ms    - Beats 95.71%
+ * Memory:  43.62MB - Beats 94.05%
  */
 
-import captureTestResults, { type ITest } from "../../testControl";
+import captureTestResults, { type ITest } from "../testControl";
 
 const searchInsert = (nums: number[], target: number): number => {
   const foundIndex = nums.indexOf(target);

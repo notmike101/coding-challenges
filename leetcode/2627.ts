@@ -1,5 +1,6 @@
 /**
- * LeetCode Debounce problem: https://leetcode.com/problems/debounce/description/
+ * LeetCode Debounce
+ * https://leetcode.com/problems/debounce/description/
  * Mike Orozco (notmike101)
  * 
  * Runtime: 57ms  - Beats 78.5%
@@ -19,3 +20,5 @@ const debounce = (fn: F, t: number): F => {
     }, t);
   };
 };
+
+// No tests because this is a weird one

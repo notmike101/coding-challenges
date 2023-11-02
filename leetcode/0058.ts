@@ -3,11 +3,11 @@
  * https://leetcode.com/problems/length-of-last-word/description/
  * Mike Orozco (notmike101)
  * 
- * Runtime: 59ms (Beats 30.77%)
- * Memory:  42.36MB (Beats 90.22%)
+ * Runtime: 59ms    - Beats 30.77%
+ * Memory:  42.36MB - Beats 90.22%
  */
 
-import captureTestResults, { type ITest } from '../../testControl';
+import captureTestResults, { type ITest } from '../testControl';
 
 const lengthOfLastWord = (s: string): number => {
   let counter = 0;

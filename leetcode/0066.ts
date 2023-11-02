@@ -3,11 +3,11 @@
  * https://leetcode.com/problems/plus-one/description/
  * Mike Orozco (notmike101)
  * 
- * Runtime: 57ms (Beats 46.73%)
- * Memory:  44.75MB (Beats 6.41%)
+ * Runtime: 57ms    - Beats 46.73%
+ * Memory:  44.75MB - Beats 6.41%
  */
 
-import captureTestResults, { type ITest } from '../../testControl';
+import captureTestResults, { type ITest } from '../testControl';
 
 const plusOne = (digits: number[]): number[] => {
   const number = BigInt(digits.join('')) + BigInt(1);

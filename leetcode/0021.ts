@@ -1,12 +1,22 @@
 /**
- * LeetCode Merge Two Sorted Lists problem: https://leetcode.com/problems/merge-two-sorted-lists/
+ * LeetCode Merge Two Sorted Lists
+ * https://leetcode.com/problems/merge-two-sorted-lists/
  * Mike Orozco (notmike101)
  * 
- * Runtime: 63ms - Beats 58.91%
- * Memory: 45.04 MB - Beats 35.97%
+ * Runtime: 63ms     - Beats 58.09%
+ * Memory:  45.04 MB - Beats 35.08%
  */
 
-import { ListNode } from './ListNode';
+import captureTestResults, { type ITest } from '../testControl'
+
+class ListNode {
+  val: number;
+  next: ListNode | null;
+  constructor(val?: number, next?: ListNode | null) {
+    this.val = (val === undefined ? 0 : val);
+    this.next = (next === undefined ? null : null);
+  }
+}
 
 const arrayFromListNodes = (input: ListNode | null) => {
   if (!input) return [];

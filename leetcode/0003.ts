@@ -1,9 +1,15 @@
 /**
- * LeetCode Longest Substring Without Repeating Characters problem: https://leetcode.com/problems/longest-substring-without-repeating-characters/
- * Mike Orozco (notmike101) 
+ * LeetCode Longest Substring Without Repeating Characters
+ * https://leetcode.com/problems/longest-substring-without-repeating-characters/
+ * Mike Orozco (notmike101)
+ * 
+ * Runtime: 87ms    - Beats 88.48%
+ * Memory:  48.51MB - Beats 32.01%
  */
 
-function lengthOfLongestSubstring(s: string): number {
+import captureTestResults, { type ITest } from "../testControl";
+
+const lengthOfLongestSubstring = (s: string): number => {
   let longestSubstringLength = 0;
   let currentSubstring = '';
 
@@ -22,19 +28,10 @@ function lengthOfLongestSubstring(s: string): number {
   return longestSubstringLength > currentSubstring.length ? longestSubstringLength : currentSubstring.length;
 };
 
-const tests = [
-  { input: 'abcabcbb', output: 3 },
-  { input: 'bbbbb', output: 1 },
-  { input: 'pwwkew', output: 3 },
+const tests: ITest[] = [
+  { input: 'abcabcbb', expected: 3, func: lengthOfLongestSubstring },
+  { input: 'bbbbb', expected: 1, func: lengthOfLongestSubstring },
+  { input: 'pwwkew', expected: 3, func: lengthOfLongestSubstring },
 ];
 
-const main = () => {
-  for (let i = 0; i < tests.length; ++i) {
-    const test = tests[i];
-    const result = lengthOfLongestSubstring(test.input);
-
-    console.log(`Test ${i}: ${result === test.output ? 'PASS' : 'FAIL'}\nInput: ${test.input}\nOutput: ${result}\nExpected: ${test.output}\n`);
-  }
-};
-
-main();
+console.table(captureTestResults(tests));

@@ -3,11 +3,11 @@
  * https://leetcode.com/problems/add-binary/description/
  * Mike Orozco (notmike101)
  * 
- * Runtime: 63ms (Beats 48.19%)
- * Memory:  44.75MB (Beats 75.67%)
+ * Runtime: 63ms    - Beats 48.19%
+ * Memory:  44.75MB - Beats 75.67%
  */
 
-import captureTestResults, { type ITest } from "../../testControl"
+import captureTestResults, { type ITest } from "../testControl"
 
 const addBinary = (a: string, b: string): string => {
   if (a === '0') return b;

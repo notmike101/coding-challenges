@@ -3,11 +3,11 @@
  * https://leetcode.com/problems/sqrtx/submissions/1089650611/
  * Mike Orozco (notmike101)
  * 
- * Runtime: 87mb (Beats 25.08%)
- * Memory:  44.81MB (Beats 42.45%)
+ * Runtime: 87mb    - Beats 25.08%
+ * Memory:  44.81MB - Beats 42.45%
  */
 
-import captureTestResults, { type ITest } from "../../testControl"
+import captureTestResults, { type ITest } from "../testControl"
 
 const mySqrt = (x: number): number => {
   let num = 0;
