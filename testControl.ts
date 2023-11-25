@@ -1,7 +1,7 @@
 export interface ITest {
   input: any;
   expected: any;
-  func: Function;
+  func: Function | Function[];
   identifier?: string;
 }
 
@@ -24,16 +24,20 @@ export const captureTestResults = (tests: ITest[]) => {
   const output: {[key: string]: any} = [];
 
   for (const { input, expected, func, identifier } of tests) {
-    const [result, runTime] = captureRuntime(func, input);
-  
-    output.push({
-      IDENTIFIER: identifier ?? func.name,
-      INPUT: input.toString(),
-      EXPECTED: expected.toString(),
-      RESULT: result.toString(),
-      PASS: result.toString() === expected.toString(),
-      'RUNTIME (ms)': runTime,
-    });
+    const funcs = (Array.isArray(func) ? func : [func]);
+
+    for (let singleFunction of funcs) {
+      const [result, runTime] = captureRuntime(singleFunction, input);
+    
+      output.push({
+        IDENTIFIER: identifier ?? singleFunction.name,
+        INPUT: input.toString(),
+        EXPECTED: expected.toString(),
+        RESULT: result.toString(),
+        PASS: result.toString() === expected.toString(),
+        'RUNTIME (ms)': runTime,
+      });
+    }
   }
 
   return output;
