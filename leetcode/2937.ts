@@ -7,20 +7,22 @@
  * Memory:  47.01 MB - Beats 79.55%
  */
 
-import captureTestResults, { type ITest } from "../testControl"
+import captureTestResults, { type ITest } from '../testControl';
 
 const findMinimumOperations = (s1: string, s2: string, s3: string): number => {
   if (s1[0] !== s2[0] || s2[0] !== s3[0]) return -1;
 
+  // Storing the lengths in variables *should* be faster, but leetcode says it's not, so...?
   const shortestStringLength = Math.min(s1.length, s2.length, s3.length);
   let sumOfStringLengths = s1.length + s2.length + s3.length - 3;
   let index = 1;
 
   while (index < shortestStringLength) {
-    const s1Char = s1[index];
+    const s1Char = s1[index]; // Don't need this, but leetcode reports this is faster...?
     const s2Char = s2[index];
-    const s3Char = s3[index++];
+    const s3Char = s3[index++]; // Don't need this, but leetcode reports this is faster...?
 
+    // if (s1[index] !== s2Char || s2Char !== s3[index++]) break;
     if (s1Char !== s2Char || s2Char !== s3Char) break;
     
     sumOfStringLengths -= 3;
