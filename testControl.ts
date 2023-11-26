@@ -1,12 +1,12 @@
 export interface ITest {
-  input: unknown;
-  expected: unknown;
+  input: any;
+  expected: any;
   func: Function | Function[];
   identifier?: string;
   testFunc?: (result: any, expected: any) => boolean;
 }
 
-export const captureRuntime = (func: Function, input: unknown): [number, number] => {
+export const captureRuntime = (func: Function, input: any): [number, number] => {
   const startTime = performance.now();
   let result;
 
@@ -32,10 +32,10 @@ export const captureTestResults = (tests: ITest[]) => {
     
       output.push({
         IDENTIFIER: identifier ?? singleFunction.name,
-        INPUT: input?.toString(),
-        EXPECTED: expected?.toString(),
-        RESULT: result?.toString(),
-        PASS: testFunc?.(result, expected) ?? result?.toString() === expected?.toString(),
+        INPUT: input.toString().length >= 15 ? `${input.toString().substring(0, 15)}...(${input.toString().length})` : input.toString(),
+        EXPECTED: expected.toString(),
+        RESULT: result.toString(),
+        PASS: testFunc?.(result, expected) ?? result.toString() === expected.toString(),
         'RUNTIME (ms)': runTime,
       });
     }
