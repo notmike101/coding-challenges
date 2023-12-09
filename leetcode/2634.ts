@@ -14,10 +14,10 @@ type Fn = (n: number, i: number) => any
 const filter = (arr: number[], fn: Fn): number[] => {
   const output: number[] = [];
 
-  for (let i = 0; i < arr.length; ++i) {
-    const elm = arr[i];
+  for (let i = arr.length - 1, j = 0; i >= 0; i--, j++) {
+    const elm = arr[j];
 
-    if (fn(elm, i)) {
+    if (fn(elm, j)) {
       output.push(elm);
     }
   }
