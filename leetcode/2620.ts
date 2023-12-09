@@ -3,8 +3,8 @@
  * https://leetcode.com/problems/counter/description/
  * Mike Orozco (notmike101)
  * 
- * Runtime: 
- * Memory:  
+ * Runtime: 45ms - Beats 93.71%
+ * Memory:  42.42 MB - Beats 84.52%
  */
 
 import { captureTestResults, type ITest } from '../testControl';
