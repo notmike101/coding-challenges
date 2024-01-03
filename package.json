@@ -1,15 +1,19 @@
 {
   "name": "coding-challenges",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ts-node"
+    "test": "ts-node --project tsconfig.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "tsconfig-paths": "^4.2.0"
   }
 }
