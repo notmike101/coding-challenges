@@ -3,40 +3,32 @@
  * https://leetcode.com/problems/assign-cookies/description/
  * Mike Orozco (notmike101)
  * 
- * Runtime: 146 ms - Beats 47.31%
- * Memory:  48.11 MB - Beats 5.38%
- * 
- * Notes: I got tired doing this one
- * There's a better way that I'll need to do later that's just a single while loop & 2 pointers
+ * Runtime: 147 ms - Beats 40.60%
+ * Memory:  47.64 MB - Beats 5.38%
  */
 
-import { captureTestResults, type ITest } from "../testControl";
+import { captureTestResults, type ITest } from '../testControl.ts';
 
 const sortComparer = (a: number, b: number) => a - b;
 
 const findContentChildren = (g: number[], s: number[]): number => {
   if (g.length === 0 || s.length === 0) return 0;
 
-  const remainingCookies = [...s].sort(sortComparer);
-  const remainingChildren = [...g].sort(sortComparer);
+  const sortedChildren = g.sort(sortComparer);
+  const sortedCookies = s.sort(sortComparer);
   let satisfiedChildren = 0;
-  let cookieIndex = 0;
+  let currentChildIndex = 0;
 
-  do {
-    do {
-      if (remainingCookies[cookieIndex] >= remainingChildren[0]) {
-        remainingCookies.splice(cookieIndex, 1);
-        satisfiedChildren += 1;
-        break;
-      } else {
-      }
+  while (sortedChildren[currentChildIndex] !== undefined) {
+    const foundCookieIndex = sortedCookies.findIndex((cookie) => cookie >= sortedChildren[currentChildIndex]);
 
-      cookieIndex += 1;
-    } while (cookieIndex < remainingCookies.length);
+    if (foundCookieIndex !== -1) {
+      satisfiedChildren += 1;
+      sortedCookies.splice(foundCookieIndex, 1);
+    }
 
-    cookieIndex = 0;
-    remainingChildren.splice(0, 1);
-  } while (remainingChildren.length > 0 && remainingCookies.length > 0);
+    currentChildIndex += 1;
+  }
 
   return satisfiedChildren;
 };
