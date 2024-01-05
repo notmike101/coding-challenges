@@ -1,27 +1,19 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "node16",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "allowImportingTsExtensions": true,
     "allowJs": true,
     "lib": ["ES2022", "DOM"],
     "noEmit": true,
     "strict": true,
-
     "noImplicitReturns": true,
     "noImplicitAny": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "isolatedModules": true,
+    "isolatedModules": true
   },
-  "include": [
-    "**/*.ts",
-  ],
-  "exclude": ["node_modules"],
-  "ts-node": {
-    "require": ["tsconfig-paths/register"],
-    "files": true,
-    "esm": true,
-  }
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
 }
