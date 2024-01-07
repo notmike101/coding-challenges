@@ -3,8 +3,8 @@
  * https://leetcode.com/problems/create-hello-world-function/description/
  * Mike Orozco (notmike101)
  * 
- * Runtime: 57ms - Beats 50.62%
- * Memory:  42.78 MB - Beats 64.62%
+ * Runtime: 49ms - Beats 82.92%
+ * Memory:  43.24 MB - Beats 7.36%
  */
 
 const createHelloWorld = () => (): string => 'Hello World';
