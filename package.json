@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "tsx"
+    "test": "tsx",
+    "test:ts": "tsx",
+    "test:js": "node"
   },
   "devDependencies": {
     "tsx": "^4.7.0",
