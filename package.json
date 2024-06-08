@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "tsx": "^4.13.3",
-    "typescript": "^5.3.3"
+    "typescript": "5.1.6"
   }
 }
