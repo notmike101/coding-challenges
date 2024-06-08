@@ -9,19 +9,19 @@
 
 import captureTestResults, { ITest } from "../testControl.ts";
 
-const keyboard: Set<string>[] = [
+const keyboard = new Array<Set<string>>(
   new Set(['q','w','e','r','t','y','u','i','o','p']),
   new Set(['a','s','d','f','g','h','j','k','l']),
   new Set(['z','x','c','v','b','n','m']),
-];
+);
 
 const findWords = (words: string[]): string[] => {
-  const output: string[] = [];
-  let i;
-  let j;
-  let word;
-  let keyboardRow;
-  let isValid;
+  const output = new Array<string>();
+  let i: number,
+      j: number,
+      word: string,
+      keyboardRow: Set<string>,
+      isValid: boolean;
 
   for (i = words.length - 1; i >= 0; --i) {
     word = words[i].toLowerCase();
